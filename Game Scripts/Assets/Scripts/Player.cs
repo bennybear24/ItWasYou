@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public GameObject Camera3;
     public GameObject Camera4;
     AudioSource audioData;
+    public GameObject GameOverScene;
+    private OpenNewspaper CheckNewspapers;
+    public int numberofNewspapers;
 
     public Vector2 velocity;
 
@@ -31,6 +34,8 @@ public class Player : MonoBehaviour
         BasementKeyCheck = GetComponent<Pickup>();
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);
+        CheckNewspapers = GetComponent<OpenNewspaper>();
+        numberofNewspapers = CheckNewspapers.NumberofNewspapers;
     }
 
     private IEnumerator DrawerMessageDisappears()
@@ -108,12 +113,17 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("SecondFloorStairs"))
         {
-            if ((int)delay >= 3)
+            //if ((int)delay >= 3)
+            //{
+                //transform.position = new Vector2(-93, 248);
+                //delay = 0;
+                //Camera1.gameObject.SetActive(false);
+                //Camera2.gameObject.SetActive(true);
+
+            //}
+            if (numberofNewspapers == 4)
             {
-                transform.position = new Vector2(-93, 248);
-                delay = 0;
-                Camera1.gameObject.SetActive(false);
-                Camera2.gameObject.SetActive(true);
+                GameOverScene.gameObject.SetActive(true);
             }
         }
         else if (other.CompareTag("FirstFloorStairs"))

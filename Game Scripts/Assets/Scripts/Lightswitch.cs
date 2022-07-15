@@ -20,7 +20,7 @@ public class Lightswitch : MonoBehaviour
         {
             if (lights == true)
             {
-                houseLights.intensity = 0.25f;
+                houseLights.intensity = 0.1f;
                 lights = false;
             }
             else if (lights == false)

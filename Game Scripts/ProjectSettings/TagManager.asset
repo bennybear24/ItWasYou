@@ -80,9 +80,9 @@ TagManager:
   - name: WallOnTop
     uniqueID: 380840693
     locked: 0
-  - name: Character
-    uniqueID: 1284017463
-    locked: 0
   - name: Newspaper
     uniqueID: 3920830161
+    locked: 0
+  - name: Character
+    uniqueID: 1284017463
     locked: 0
