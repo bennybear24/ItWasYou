@@ -10,7 +10,8 @@ public class OpenNewspaper : MonoBehaviour
     private Inventory inventory;
     public GameObject Newspaper;
     public GameObject NewspaperPanel;
-    public int NumberofNewspapers;
+    private int NumberofNewspapers = 0;
+    public bool CheckForNewspaperNumber;
 
     // Update is called once per frame
     void Update()
@@ -19,13 +20,16 @@ public class OpenNewspaper : MonoBehaviour
         {
             if (NewspaperPanel.activeSelf)
             {
+                NumberofNewspapers++;
+                Debug.Log(NumberofNewspapers);
                 NewspaperPanel.SetActive(false);
                 isOpen = false;
                 Newspaper.SetActive(false);
-                NumberofNewspapers = NumberofNewspapers = +1;
-                Debug.Log(NumberofNewspapers);
-                return;
             }
+        }
+        if (NumberofNewspapers == 4)
+        {
+            CheckForNewspaperNumber = true;
         }
     }
 

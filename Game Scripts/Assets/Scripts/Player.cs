@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     AudioSource audioData;
     public GameObject GameOverScene;
     private OpenNewspaper CheckNewspapers;
-    public int numberofNewspapers;
+    public bool numberofNewspapers;
 
     public Vector2 velocity;
 
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         audioData = GetComponent<AudioSource>();
         audioData.Play(0);
         CheckNewspapers = GetComponent<OpenNewspaper>();
-        numberofNewspapers = CheckNewspapers.NumberofNewspapers;
+        numberofNewspapers = CheckNewspapers.CheckForNewspaperNumber;
     }
 
     private IEnumerator DrawerMessageDisappears()
@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
                 //Camera2.gameObject.SetActive(true);
 
             //}
-            if (numberofNewspapers == 4)
+            if (numberofNewspapers == true)
             {
                 GameOverScene.gameObject.SetActive(true);
             }
