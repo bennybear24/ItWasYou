@@ -18,7 +18,8 @@ public class OpenNewspaper : MonoBehaviour
         {
             if (NewspaperPanel.activeSelf)
             {
-                Newspaper.gameObject.SetActive(false);
+                NewspaperPanel.SetActive(false);
+                isOpen = false;
             }
         }
     }
@@ -48,6 +49,7 @@ public class OpenNewspaper : MonoBehaviour
             }
 
             NewspaperPanel.gameObject.SetActive(true);
+            isOpen = false;
         }
     }
 }

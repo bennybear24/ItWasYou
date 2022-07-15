@@ -40,6 +40,7 @@ public class LanternObtainedText : MonoBehaviour
                     break;
                 }
             }
+            isOpen = false;
 
         }
     }

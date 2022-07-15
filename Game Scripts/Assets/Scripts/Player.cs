@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     public float speed = 10;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public GameObject Camera2;
     public GameObject Camera3;
     public GameObject Camera4;
+    AudioSource audioData;
 
     public Vector2 velocity;
 
@@ -27,6 +29,8 @@ public class Player : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody2D>();
         BasementKeyCheck = GetComponent<Pickup>();
+        audioData = GetComponent<AudioSource>();
+        audioData.Play(0);
     }
 
     private IEnumerator DrawerMessageDisappears()
